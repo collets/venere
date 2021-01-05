@@ -1,0 +1,603 @@
+@font-face {
+    font-family: 'jenna_sueregular';
+    src: url('../fonts/jennasue-webfont.woff2') format('woff2'), url('../fonts/jennasue-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dk_lemon_yellow_sunregular';
+    src: url('../fonts/dk_lemon_yellow_sun-webfont.woff2') format('woff2'), url('../fonts/dk_lemon_yellow_sun-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --c-main-green: #78917a;
+    --c-dark-green: #657b66;
+    --c-light-green: #8fa391;
+    --c-lighest-green: #a5b6a7;
+    --c-main-text: #333633;
+    --c-negative-text: #fffcfc;
+    --c-background: #ffffff;
+    --c-background-dark: #333633;
+    --c-error: #C21F1F;
+
+    --typo-xxl: 15rem;
+    --typo-xl: 10rem;
+    --typo-lg: 9rem;
+    --typo-md: 6.7rem;
+    --typo-sm: 4.2rem;
+    --typo-base: 3.2rem;
+    --typo-xs: 2rem;
+    
+    --font-jenna-sue: 'jenna_sueregular';
+    --font-dk-lemon: 'dk_lemon_yellow_sunregular';
+    --font-montserrat: 'Montserrat', sans-serif;
+}
+
+html,
+body {
+    font-size: 62.5%;
+    margin: 0;
+    color: var(--c-main-text);
+}
+
+/* ------- TYPOGRAPHY ------- */
+
+main, p, a {
+    font-size: 3.2rem;
+    font-size: var(--typo-base);
+    font-family: var(--font-montserrat);
+}
+
+h2 {
+    font-size: 20rem;
+    font-weight: 400;
+    font-size: var(--typo-xxl);
+}
+
+h3 {
+    font-size: 10rem;
+    font-weight: 400;
+    font-size: var(--typo-xl);
+}
+
+h4 {
+    font-size: 6.7rem;
+    font-weight: 400;
+    font-size: var(--typo-md);
+}
+
+h5 {
+    font-size: 4.2rem;
+    font-weight: 400;
+    font-size: var(--typo-sm);
+}
+
+h6 {
+    font-size: 3.2rem;
+    font-weight: 400;
+    font-size: var(--typo-base);
+}
+
+/* ------- GENERAL ------- */
+
+.wrapper {
+    /* The height needs to be set to a fixed value for the effect to work.
+     * 100vh is the full height of the viewport. */
+    height: 100vh;
+    /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+    overflow-x: hidden;
+    /* Enable scrolling on the page. */
+    overflow-y: auto;
+    /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+    perspective: 2px;
+}
+
+/* ------- SECTIONS ------- */
+
+.section {
+    /* Needed for children to be absolutely positioned relative to the parent. */
+    position: relative;
+}
+
+.section-intro {
+    height: 100vh;
+
+    background-image: url("../images/colenzato.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.section-countdown {
+    height: 500px;
+}
+
+.section-spouses{
+    padding: 10rem 2rem 7.5rem 2rem;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section-locations {
+    padding: 7.5rem 2rem 10rem 2rem;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section-maps {
+    height: 90rem;
+
+    margin: 5rem 0;
+}
+
+.section-present {
+    padding: 5rem 2rem 10rem 2rem;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section-message-form {
+    position: relative;
+
+    width: 800px;
+    max-width: 100%;
+
+    margin: 10rem auto;
+    padding: 5rem;
+
+    border: 10px solid var(--c-main-green);
+}
+
+.footer {
+    background-color: var(--c-main-green);
+    
+    padding: 5rem;
+    margin: 10rem 0 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ------- INTRO ------- */
+
+.intro-overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--c-background-dark);
+    opacity: 0.7;
+}
+
+.logo-wrapper {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+}
+
+.intro-scroll-button {
+    position: absolute;
+    bottom: 50px;
+}
+
+/* ------- SPOUSES ------- */
+
+.spouses-title {
+    font-family: var(--font-dk-lemon);
+    font-size: var(--typo-md);
+
+    color: var(--c-main-green);
+
+    flex: 0 0 100%;
+    
+    margin: 0 0 5rem 0;
+
+    text-align: center;
+}
+
+.biographies {
+    flex: 0 0 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.biography {
+    flex: 0 0 600px;
+    max-width: 100%;
+    
+    margin: 0 8rem;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.biography-name{
+    font-family: var(--font-jenna-sue);
+    font-size: var(--typo-xxl);
+
+    margin: 0;
+
+    color: var(--c-main-green);
+}
+
+.biography-title {
+    font-size: var(--typo-sm);
+
+    color: var(--c-main-green);
+}
+
+.biography-summary {
+    font-weight: 200;
+
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.biography-photo {
+    width: 400px;
+    height: 400px;
+
+    border-radius: 100%;
+
+    background-size: cover;
+
+    margin-top: auto;
+}
+
+/* ------- LOCATIONS ------- */
+
+.locations-title {
+    font-family: var(--font-dk-lemon);
+    font-size: var(--typo-lg);
+
+    color: var(--c-main-green);
+
+    flex: 0 0 100%;
+    
+    margin: 0 0 10rem 0;
+
+    text-align: center;
+}
+
+.locations {
+    flex: 0 0 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.location {
+    flex: 0 0 600px;
+    max-width: 100%;
+    
+    margin: 0 8rem;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.location-divider {
+    height: 100%;
+    width: 1px;
+
+    background-color: var(--c-background-dark);
+    opacity: .5;
+}
+
+.location-label {
+    font-family: var(--font-dk-lemon);
+    font-size: var(--typo-md);
+
+    color: var(--c-main-green);
+}
+
+.location-hour{
+    font-size: var(--typo-sm);
+
+    color: var(--c-main-green);
+}
+
+.location-address {
+    font-weight: 200;
+
+    text-align: center;
+
+    text-decoration: none;
+    color: var(--c-main-text);
+}
+
+.location-address:hover {
+    color: var(--c-lighest-green);
+}
+
+/* ------- MAP ------- */
+
+.marker-title {
+    font-family: var(--font-dk-lemon);
+    font-size: 2.5rem;
+    color: var(--c-main-green);
+    display: inline-block;
+}
+
+.marker-address {
+    font-size: 1.8rem;
+    display: inline-block;
+}
+
+.marker-maps {
+    font-size: 1.4rem;
+    color: var(--c-light-green);
+    text-decoration: none;
+
+    margin-top: 1rem;
+    display: inline-block;
+}
+.marker-maps:hover{
+    color: var(--c-dark-green);
+    text-decoration: none;
+}
+
+
+/* ------- PRESENT ------- */
+
+.present-title {
+    flex: 0 1 100%;
+
+    text-align: center;
+
+    font-size: var(--typo-xxl);
+    font-family: var(--font-jenna-sue);
+
+    color: var(--c-main-green);
+
+    margin: 0;
+}
+
+.present-message {
+    flex: 0 1 100%;
+
+    text-align: center;
+    
+    font-weight: 200;
+}
+
+.iban {
+    flex: 0 1 100%;
+
+    text-align: center;
+    
+    font-size: var(--typo-sm);
+
+    color: var(--c-main-green);
+}
+
+/* ------- MESSAGE ------- */
+
+.message-title {
+    position: absolute;
+    top: -5rem;
+    left: calc(50% - 370px);
+
+    width: 740px;
+    text-align: center;
+
+    font-family: var(--font-dk-lemon);
+    font-size: var(--typo-md);
+    color: var(--c-main-green);
+
+    background-color: var(--c-background);
+    padding: 0 2rem;
+}
+
+.message-label {
+    margin: 4rem 0 0 0;
+    font-weight: 200;
+}
+
+.message-form {
+    margin: 5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message-form-label {
+    flex: 0 1 100%;
+
+    text-align: left;
+    font-size: var(--typo-sm);
+    font-weight: 200;
+
+    margin: 50px 0 20px 0;
+}
+
+.message-form-input {
+    flex: 0 1 100%;
+
+    font-family: var(--font-montserrat);
+    font-size: var(--typo-base);
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--c-main-green);
+
+    outline: var(--c-dark-green);
+
+    padding: 5px 15px;
+    min-height: 10rem;
+}
+
+.message-form-footer {
+    flex: 0 1 100%;
+
+    margin-top: 5rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.message-form-submit{
+    margin-left: 2.5rem;
+
+    padding: 1.5rem 8rem;
+
+    font-size: var(--typo-sm);
+    font-family: var(--font-montserrat);    
+    text-transform: uppercase;
+
+    background-color: var(--c-lighest-green);
+    color: var(--c-negative-text);
+
+    border: 0;
+
+    outline: var(--c-dark-green);
+
+    cursor: pointer;
+}
+
+.message-error {
+    flex: 0 1 200px;
+
+    opacity: 0;
+
+    color: var(--c-error);
+
+    font-size: var(--typo-xs);
+}
+
+.message-error--visible {
+    opacity: 1;
+
+    transition: opacity ease-in .5s;
+}
+
+.footer-title {
+    flex: 0 1 100%;
+
+    text-align: center;
+
+
+    margin: 0;
+
+    color: var(--c-negative-text);
+    font-family: var(--font-jenna-sue);
+}
+
+.contact {
+    flex: 0 1 300px;
+
+    margin: 0 5rem 0 5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-name {
+    font-size: var(--typo-md);
+    font-family: var(--font-dk-lemon);
+
+    color: var(--c-negative-text);
+}
+
+.contact-number {
+    font-weight: 200;
+
+    color: var(--c-negative-text);
+    text-decoration: none;
+}
+
+.contact-number:focus,
+.contact-number:hover,
+.contact-number:active {
+    color: var(--c-negative-text);
+    text-decoration: none;
+}
+
+/* ------- PARALLAX ------- */
+
+.parallax::after {
+    /* Display and position the pseudo-element */
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Move the pseudo-element back away from the camera,
+     * then scale it back up to fill the viewport.
+     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    transform: translateZ(-1px) scale(1.5);
+    /* Force the background image to fill the whole element. */
+    background-size: 100%;
+    /* Keep the image from overlapping sibling elements. */
+    z-index: -1;
+}
+
+/* ------- COUNTDOWN ------- */
+
+.countdown {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.countdown-element {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--c-negative-text);
+    font-family: var(--font-dk-lemon);
+}
+
+.countdown-days {
+    background-color: var(--c-dark-green);
+}
+
+.countdown-hours {
+    background-color: var(--c-main-green);
+}
+
+.countdown-minutes {
+    background-color: var(--c-light-green);
+}
+
+.countdown-seconds {
+    background-color: var(--c-lighest-green);
+}
+
+.countdown-number {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.countdown-label {
+    font-size: var(--typo-sm);
+    text-transform: uppercase;
+}
