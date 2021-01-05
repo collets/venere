@@ -5,6 +5,7 @@
   "repository": "git@github.com:collets/venere.git",
   "author": "scoletta",
   "license": "MIT",
-  "devDependencies": {
+  "scripts": {
+    "build": "./ci/build.sh"
   }
 }
