@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Colenzato | Matrimonio</title>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <meta name="theme-color" content="#78917a">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/scroll-button.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
+  </head>
+
+  <body>
+    <main class="wrapper">
+      <section class="section section-intro parallax">
+        <div class="intro-overlay"></div>
+        <div class="logo-wrapper">
+          <img class="logo" src="./images/logo-colenzato-provvisorio.png">
+        </div>
+        <span class="intro-scroll-buttonscroll-btn">
+          <span class="mouse">
+            <span>
+            </span>
+          </span>
+        </span>
+      </section>
+      <section class="section section-countdown">
+        <div class="countdown" id="countdown">
+          <div class="countdown-element countdown-days">
+            <h3 class="countdown-number"></h3>
+            <span class="countdown-label">giorni</span>
+          </div>
+          <div class="countdown-element countdown-hours">
+            <h3 class="countdown-number"></h3>
+            <span class="countdown-label">ore</span>
+          </div>
+          <div class="countdown-element countdown-minutes">
+            <h3 class="countdown-number"></h3>
+            <span class="countdown-label">minuti</span>
+          </div>
+          <div class="countdown-element countdown-seconds">
+            <h3 class="countdown-number"></h3>
+            <span class="countdown-label">secondi</span>
+          </div>
+        </div>
+      </section>
+      <section class="section section-spouses">
+        <h3 class="spouses-title">il matrimonio di</h3>
+        <div class="biographies">
+          <div class="biography">
+            <h2 class="biography-name">Simo</h2>
+            <span class="biography-title">Lo sposo</span>
+            <p class="biography-summary">Animo nerd, lettore incallito, appassionato di Lego è dir poco.</p>
+            <div class="biography-photo" style="background-image: url('./images/simo.jpeg');"></div>
+          </div>
+          <div class="biography">
+            <h2 class="biography-name">Stefy</h2>
+            <span class="biography-title">La sposa</span>
+            <p class="biography-summary">Spirito digitale, pasticciera amatoriale, gattara per definizione.</p>
+            <div class="biography-photo" style="background-image: url('./images/stefy.jpeg');"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-locations">
+        <h4 class="locations-title">sabato 11 settembre 2021</h4>
+        <div class="locations">
+          <div class="location">
+            <span class="location-label">cerimonia</span>
+            <span class="location-hour">ore 15.30</span>
+            <a href="https://goo.gl/maps/bawM8UeNonJRifUW9" target="_blank" class="location-address">
+              Villa Giustinian Morosini<br>
+              via Luigi Mariutto 1, Mirano (VE)
+            </a>
+          </div>
+          <span class="location-divider"></span>
+          <div class="location">
+            <span class="location-label">festeggiamenti</span>
+            <span class="location-hour">ore 18.00</span>
+            <a href="https://goo.gl/maps/x5p2w4j2zYU846rg7" target="_blank" class="location-address">
+              Castello di San Pelagio<br>
+              via S. Pelagio 50, Due Carrare (PD)
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="section section-timeline"></section>
+      <section class="section section-maps" id="map"></section>
+      <section class="section section-present">
+        <h2 class="present-title">Regalo di nozze</h2>
+        <p class="present-message">
+          Il pensiero più bello che possiate farci è festeggiare con noi nel nostro giorno.<br>
+          Ma se gradite farci un regalo, saremo felici di metterlo nel salvadanaio in vista del nostro viaggio di nozze.
+        </p>
+        <span class="iban">IBAN IT91D0326822300052838327100 </span>
+      </section>
+      <section class="section section-message-form">
+        <span class="message-title">MESSAGGIO DI AUGURI PER GLI SPOSI</span>
+        <p class="message-label">
+          Se vi fa piacere, lasciateci un messaggio di auguri.<br>
+          Sarà bellissimo poterlo leggere pensando a voi!
+        </p>
+        <form class="message-form" id="messageForm">
+          <label for="name" class="message-form-label">Nome e cognome</label>
+          <input required type="text" class="message-form-input" id="name"/>
+          <label for="message" class="message-form-label">Messaggio</label>
+          <textarea required rows="5" class="message-form-input" id="message"></textarea>
+          <div class="message-form-footer">
+            <span class="message-error" id="errorLabel">Errore imprevisto, riprova per favore</span>
+            <lottie-player src="./images/spinner.json" background="transparent" speed="1" style="width: 50px; height: 50px;" loop></lottie-player>
+            <button type="submit" class="message-form-submit">invia</button>
+          </div>
+        </form>
+      </section>
+      <footer class="footer">
+        <h2 class="footer-title">Contatti</h2>
+        <div class="contact">
+          <span class="contact-name">Simo</span>
+          <a class="contact-number" href="tel:3381732263">338 1742263</a>
+        </div>
+        <div class="contact">
+          <span class="contact-name">Stefy</span>
+          <a class="contact-number" href="tel:3407536348">340 7536348</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src='./js/map.js'></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzq-JZleFVkWruZsU7G1GmJaL_ClISjv8&map_ids=243918c4ec14179c&callback=initMap">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+  <script src='./js/form.js'></script>
+  <script src='./js/countdown.js'></script>
+</html>
