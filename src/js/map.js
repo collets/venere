@@ -2,11 +2,9 @@ let map;
 
 function initMap() {
 
-  const windowWidth = window.innerWidth;
-
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 45.388449, lng: 12.023803 },
-    zoom: windowWidth > 900 ? 11 : 9,
+    center: { lat: 45.44401548324671, lng: 11.984149094100346 },
+    zoom: 10,
     mapId: '243918c4ec14179c',
     gestureHandling: 'cooperative'
   });
