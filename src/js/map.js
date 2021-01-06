@@ -1,9 +1,12 @@
 let map;
 
 function initMap() {
+
+  const windowWidth = window.innerWidth;
+
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 45.388449, lng: 12.023803 },
-    zoom: 11,
+    zoom: windowWidth > 900 ? 11 : 9,
     mapId: '243918c4ec14179c',
     gestureHandling: 'cooperative'
   });
