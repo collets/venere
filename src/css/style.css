@@ -22,7 +22,6 @@
     --c-background: #ffffff;
     --c-background-dark: #333633;
     --c-error: #C21F1F;
-
     --typo-xxl: 15rem;
     --typo-xl: 10rem;
     --typo-lg: 9rem;
@@ -30,14 +29,23 @@
     --typo-sm: 4.2rem;
     --typo-base: 3.2rem;
     --typo-xs: 2rem;
-    
     --font-jenna-sue: 'jenna_sueregular';
     --font-dk-lemon: 'dk_lemon_yellow_sunregular';
     --font-montserrat: 'Montserrat', sans-serif;
 }
 
-html,
-body {
+@media screen and (max-width: 800px) {
+    :root {
+        --typo-xxl: 10rem;
+        --typo-xl: 8rem;
+        --typo-lg: 7rem;
+        --typo-md: 5.6rem;
+        --typo-sm: 3.2rem;
+        --typo-base: 2.2rem;
+    }
+}
+
+html, body {
     font-size: 62.5%;
     margin: 0;
     color: var(--c-main-text);
@@ -104,7 +112,6 @@ h6 {
 
 .section-intro {
     height: 100vh;
-
     background-image: url("../images/colenzato.jpg");
     background-position: center;
     background-size: cover;
@@ -112,12 +119,29 @@ h6 {
 }
 
 .section-countdown {
-    height: 500px;
+    height: 350px;
 }
 
-.section-spouses{
-    padding: 10rem 2rem 7.5rem 2rem;
+@media screen and (max-width: 1700px) {
+    .section-countdown {
+        height: 300px;
+    }
+}
 
+@media screen and (max-width: 900px) {
+    .section-countdown {
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section-countdown {
+        height: 400px;
+    }
+}
+
+.section-spouses {
+    padding: 10rem 2rem 7.5rem 2rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -125,7 +149,6 @@ h6 {
 
 .section-locations {
     padding: 7.5rem 2rem 10rem 2rem;
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -133,36 +156,45 @@ h6 {
 
 .section-maps {
     height: 90rem;
-
     margin: 5rem 0;
 }
 
 .section-present {
     padding: 5rem 2rem 10rem 2rem;
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+@media screen and (max-width: 1024px) {
+    .section-present {
+        padding: 5rem 2rem 5rem 2rem;
+    }
+}
+
 .section-message-form {
     position: relative;
-
-    width: 800px;
+    width: 900px;
     max-width: 100%;
-
     margin: 10rem auto;
     padding: 5rem;
-
     border: 10px solid var(--c-main-green);
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+    .section-message-form {
+        width: 100%;
+        margin: 5rem 0;
+        padding: 2rem;
+        border: none;
+    }
 }
 
 .footer {
     background-color: var(--c-main-green);
-    
     padding: 5rem;
     margin: 10rem 0 0 0;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -203,53 +235,69 @@ h6 {
 .spouses-title {
     font-family: var(--font-dk-lemon);
     font-size: var(--typo-md);
-
+    text-transform: uppercase;
     color: var(--c-main-green);
-
     flex: 0 0 100%;
-    
     margin: 0 0 5rem 0;
-
     text-align: center;
 }
 
 .biographies {
     flex: 0 0 100%;
-
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .biography {
     flex: 0 0 600px;
     max-width: 100%;
-    
     margin: 0 8rem;
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
 }
 
-.biography-name{
+@media screen and (max-width: 1560px) {
+    .biography {
+        flex: 0 0 300px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    .biography {
+        margin: 0 4rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .biography {
+        flex: 0 0 250px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .biography {
+        flex: 0 1 100%;
+        margin-bottom: 4rem;
+    }
+}
+
+.biography-name {
     font-family: var(--font-jenna-sue);
     font-size: var(--typo-xxl);
-
     margin: 0;
-
     color: var(--c-main-green);
 }
 
 .biography-title {
     font-size: var(--typo-sm);
-
+    text-transform: uppercase;
     color: var(--c-main-green);
 }
 
 .biography-summary {
     font-weight: 200;
-
     text-align: center;
     margin-bottom: 5rem;
 }
@@ -257,12 +305,23 @@ h6 {
 .biography-photo {
     width: 400px;
     height: 400px;
-
     border-radius: 100%;
-
     background-size: cover;
-
     margin-top: auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .biography-photo {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .biography-photo {
+        width: 300px;
+        height: 300px;
+    }
 }
 
 /* ------- LOCATIONS ------- */
@@ -270,61 +329,80 @@ h6 {
 .locations-title {
     font-family: var(--font-dk-lemon);
     font-size: var(--typo-lg);
-
     color: var(--c-main-green);
-
     flex: 0 0 100%;
-    
     margin: 0 0 10rem 0;
-
     text-align: center;
 }
 
 .locations {
     flex: 0 0 100%;
-
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .location {
     flex: 0 0 600px;
     max-width: 100%;
-    
     margin: 0 8rem;
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
+}
+
+@media screen and (max-width: 1560px) {
+    .location {
+        flex: 0 0 500px;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .location {
+        flex: 0 0 400px;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    .location {
+        flex: 0 0 300px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .location {
+        flex: 0 1 100%;
+        margin-bottom: 5rem;
+    }
 }
 
 .location-divider {
     height: 100%;
     width: 1px;
-
     background-color: var(--c-background-dark);
     opacity: .5;
+}
+
+@media screen and (max-width: 970px) {
+    .location-divider {
+        display: none;
+    }
 }
 
 .location-label {
     font-family: var(--font-dk-lemon);
     font-size: var(--typo-md);
-
     color: var(--c-main-green);
 }
 
-.location-hour{
+.location-hour {
     font-size: var(--typo-sm);
-
     color: var(--c-main-green);
 }
 
 .location-address {
     font-weight: 200;
-
     text-align: center;
-
     text-decoration: none;
     color: var(--c-main-text);
 }
@@ -351,47 +429,49 @@ h6 {
     font-size: 1.4rem;
     color: var(--c-light-green);
     text-decoration: none;
-
     margin-top: 1rem;
     display: inline-block;
 }
-.marker-maps:hover{
+
+.marker-maps:hover {
     color: var(--c-dark-green);
     text-decoration: none;
 }
-
 
 /* ------- PRESENT ------- */
 
 .present-title {
     flex: 0 1 100%;
-
     text-align: center;
-
     font-size: var(--typo-xxl);
     font-family: var(--font-jenna-sue);
-
     color: var(--c-main-green);
-
     margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .present-title {
+        line-height: 8rem;
+    }
 }
 
 .present-message {
     flex: 0 1 100%;
-
     text-align: center;
-    
     font-weight: 200;
 }
 
 .iban {
     flex: 0 1 100%;
-
     text-align: center;
-    
     font-size: var(--typo-sm);
-
     color: var(--c-main-green);
+}
+
+@media screen and (max-width: 632px) {
+    .iban {
+        font-size: var(--typo-base);
+    }
 }
 
 /* ------- MESSAGE ------- */
@@ -399,17 +479,32 @@ h6 {
 .message-title {
     position: absolute;
     top: -5rem;
-    left: calc(50% - 370px);
-
+    left: calc(50% - 390px);
     width: 740px;
     text-align: center;
-
     font-family: var(--font-dk-lemon);
     font-size: var(--typo-md);
     color: var(--c-main-green);
-
     background-color: var(--c-background);
     padding: 0 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .message-title {
+        display: block;
+        font-size: var(--typo-md);
+        width: 100%;
+        padding: 0;
+        position: relative;
+        top: inherit;
+        left: inherit;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .message-title {
+        font-size: var(--typo-sm);
+    }
 }
 
 .message-label {
@@ -417,123 +512,132 @@ h6 {
     font-weight: 200;
 }
 
+@media screen and (max-width: 1024px) {
+    .message-label {
+        display: block;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+}
+
 .message-form {
     margin: 5rem;
-
     display: flex;
     flex-wrap: wrap;
 }
 
+@media screen and (max-width: 960px) {
+    .message-form {
+        margin: 1.5rem;
+    }
+}
+
 .message-form-label {
     flex: 0 1 100%;
-
     text-align: left;
     font-size: var(--typo-sm);
     font-weight: 200;
-
     margin: 50px 0 20px 0;
 }
 
 .message-form-input {
     flex: 0 1 100%;
-
+    max-width: 100%;
+    box-sizing: border-box;
     font-family: var(--font-montserrat);
     font-size: var(--typo-base);
-
     border-width: 1px;
     border-style: solid;
     border-color: var(--c-main-green);
-
     outline: var(--c-dark-green);
-
     padding: 5px 15px;
     min-height: 10rem;
 }
 
 .message-form-footer {
     flex: 0 1 100%;
-
     margin-top: 5rem;
-
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.message-form-submit{
+.message-form-submit {
     margin-left: 2.5rem;
-
     padding: 1.5rem 8rem;
-
     font-size: var(--typo-sm);
-    font-family: var(--font-montserrat);    
+    font-family: var(--font-montserrat);
     text-transform: uppercase;
-
     background-color: var(--c-lighest-green);
     color: var(--c-negative-text);
-
     border: 0;
-
     outline: var(--c-dark-green);
-
     cursor: pointer;
+}
+
+@media screen and (max-width: 460px) {
+    .message-form-submit {
+        padding: 1rem 5rem;
+        margin: 0;
+    }
 }
 
 .message-error {
     flex: 0 1 200px;
-
     opacity: 0;
-
     color: var(--c-error);
-
     font-size: var(--typo-xs);
 }
 
 .message-error--visible {
     opacity: 1;
-
     transition: opacity ease-in .5s;
 }
 
 .footer-title {
     flex: 0 1 100%;
-
     text-align: center;
-
-
     margin: 0;
-
     color: var(--c-negative-text);
     font-family: var(--font-jenna-sue);
 }
 
 .contact {
     flex: 0 1 300px;
-
     margin: 0 5rem 0 5rem;
-
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+@media screen and (max-width: 970px) {
+    .contact {
+        flex: 0 1 200px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .contact {
+        flex: 0 1 100%;
+        margin-bottom: 4rem;
+    }
+}
+
 .contact-name {
     font-size: var(--typo-md);
     font-family: var(--font-dk-lemon);
-
     color: var(--c-negative-text);
 }
 
 .contact-number {
     font-weight: 200;
-
     color: var(--c-negative-text);
     text-decoration: none;
 }
 
-.contact-number:focus,
-.contact-number:hover,
-.contact-number:active {
+.contact-number:focus, .contact-number:hover, .contact-number:active {
     color: var(--c-negative-text);
     text-decoration: none;
 }
@@ -566,6 +670,12 @@ h6 {
     align-items: stretch;
 }
 
+@media screen and (max-width: 600px) {
+    .countdown {
+        flex-wrap: wrap;
+    }
+}
+
 .countdown-element {
     flex: 0 0 25%;
     display: flex;
@@ -574,6 +684,12 @@ h6 {
     align-items: center;
     color: var(--c-negative-text);
     font-family: var(--font-dk-lemon);
+}
+
+@media screen and (max-width: 600px) {
+    .countdown-element {
+        flex: 0 0 50%;
+    }
 }
 
 .countdown-days {
@@ -600,4 +716,13 @@ h6 {
 .countdown-label {
     font-size: var(--typo-sm);
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 900px) {
+    .countdown-number {
+        font-size: var(--typo-md);
+    }
+    .countdown-label {
+        font-size: var(--typo-base);
+    }
 }
