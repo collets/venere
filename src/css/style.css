@@ -681,13 +681,21 @@ h6 {
 
 .message-error {
     flex: 0 1 200px;
-    opacity: 0;
+    display: none;
     color: var(--c-error);
     font-size: var(--typo-xs);
 }
 
-.message-error--visible {
-    opacity: 1;
+.message-success {
+    flex: 0 1 200px;
+    display: none;
+    color: var(--c-dark-green);
+    font-size: var(--typo-xs);
+}
+
+.message-error--visible,
+.message-success--visible {
+    display: block;
     transition: opacity ease-in .5s;
 }
 

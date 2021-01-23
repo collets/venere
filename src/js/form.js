@@ -12,7 +12,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const player = document.querySelector("lottie-player");
-let success = false;
 let error = false;
 
 document.getElementById('messageForm').addEventListener('submit', (evt) => {
@@ -30,10 +29,17 @@ function sendMessage(name, message) {
         record, 
         (error) => {
             if (error) {
-              setErrror();
+                toggleErrorLabel();
             } else {
-              setSuccess();
+                clearFormState();
+                toggleSuccessLabel();
+
+                setTimeout(() => {
+                    toggleSuccessLabel();
+                }, 2000);
             }
+            
+            player.stop();
           }
         );
 }
@@ -53,14 +59,9 @@ function clearFormState() {
 
     if (error)
         toggleErrorLabel();
-
-    success = false;
-    error = false;
 }
 
 function startPlayer() {
-    attachLoopListener();
-
     player.play();
 }
 
@@ -68,36 +69,10 @@ function stopPlayer() {
     player.stop();
 }
 
-function attachLoopListener() {
-    player.addEventListener('frame', (event) => {
-        if(Math.trunc(event.detail.frame) >= 118 && Math.trunc(event.detail.frame) < 239) {
-            if (success) {
-                player.seek(239);
-            } else if (error) {
-                player.seek(706);
-                toggleErrorLabel();
-            } else {
-                player.seek(0);
-            }
-        }
-        
-        if (Math.trunc(event.detail.frame) === 418 || Math.trunc(event.detail.frame) === 839) {
-            stopPlayer();
-
-            if (success)                
-              clearFormState();
-        }
-    })
-}
-
-function setSuccess() {
-    success = true;
-}
-
-function setErrror() {
-    error = true;
-}
-
 function toggleErrorLabel() {
     document.getElementById('errorLabel').classList.toggle('message-error--visible');
+}
+
+function toggleSuccessLabel() {
+    document.getElementById('successLabel').classList.toggle('message-success--visible');
 }
