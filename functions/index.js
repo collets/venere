@@ -18,15 +18,16 @@ const APP_NAME = 'Matrimonio Colenzato';
  * Sends a message to the spouses.
  */
 // [START onCreateTrigger]
-exports.sendMessageEmail = functions.database.ref('messages').onWrite((change) => {
+exports.sendMessageEmail = functions.database.ref('messages/{messageId}').onCreate((snapshot) => {
 
-    const data = change.after.val();
-    const record = data[Object.keys(data)[0]];
+    const data = snapshot.val();
+
+    functions.logger.info(`Data ${JSON.stringify(data)}`);
 
     // [END onCreateTrigger]
     // [START eventAttributes]      
-    const name = record.name; // The name of the sender.
-    const message = record.message;
+    const name = data.name; // The name of the sender.
+    const message = data.message;
     // [END eventAttributes]
 
     return sendEmail(name, message);
