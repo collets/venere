@@ -55,7 +55,7 @@ Il magggico webmaster.`;
 
     await mailTransport.sendMail(mailOptions);
 
-    mailOptions.to = 'stefania.semenzato@gmail.com';
+    mailOptions.to = 'stefania.semenzato.1@gmail.com';
 
     await mailTransport.sendMail(mailOptions);
 
