@@ -550,15 +550,53 @@ h6 {
     font-weight: 200;
 }
 
-.iban {
-    flex: 0 1 100%;
-    text-align: center;
+.present-wire-transfer {
+    flex: 0 1 1050px;
+}
+
+.present-element {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.present-text {
     font-size: var(--typo-sm);
     color: var(--c-main-green);
 }
 
-@media screen and (max-width: 632px) {
-    .iban {
+@media screen and (max-width: 1055px) {
+    .present-wire-transfer {
+        margin: 0 40px;
+    }
+
+    .present-element {
+        flex-wrap: wrap;
+    }
+
+    .present-label {
+        flex: 0 0 100%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .present-element {
+        justify-content: center;
+    }
+
+    .present-label {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .present-text {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .present-text {
         font-size: var(--typo-base);
     }
 }
